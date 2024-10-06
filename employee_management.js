@@ -35,3 +35,16 @@ class Department { // Define Department class.
             return total + employee.salary; }, 0); // Used to add salary if the employee is not a manager. 
     }
 }
+
+//Task 3: Create a Manager Class that Inherits from Employee
+
+class Manager extends Employee { // Define manager class that inherits from employee. 
+    constructor(name, salary, position, department, bonus) {
+        super(name, salary, position, department);
+        this.bonus = bonus;
+    }
+
+    getDetails(){ // Used to include the bonuses. 
+        return ` ${this.name} works as a ${this.position} with a salary of $${this.salary} and a bonus of $${this.bonus}.`;
+    }
+}
