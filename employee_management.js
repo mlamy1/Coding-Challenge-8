@@ -48,3 +48,28 @@ class Manager extends Employee { // Define manager class that inherits from empl
         return ` ${this.name} works as a ${this.position} with a salary of $${this.salary} and a bonus of $${this.bonus}.`;
     }
 }
+// Task 5: Create and Manage Departments and Employees
+
+//Define departments
+const accounting = new Department("Accounting");
+const hr = new Department("Human Resource");
+
+//Define employees
+const cameron = new Employee("Cameron", 90000, "Developer", "Accounting");
+const myia = new Employee("Myia", 85000, "Designer", "Human Resource");
+const eboni = new Manager("Eboni", 170000, "Accounting Manager", "Accounting", 12000);
+const braylin = new Manager("Braylin", 190000, "Human Resource Manager", "Human Resource", 30000);
+
+//Used to add employees to departments.
+accounting.addEmployee(cameron);
+accounting.addEmployee(myia);
+hr.addEmployee(eboni);
+hr.addEmployee(braylin);
+
+//Messages displayed for calculations of salaries. 
+console.log(`Total salary for Accounting: $${accounting.getDepartmentSalary()}`);
+console.log(`Total salary including bonuses for Accounting: $${accounting.calculateTotalSalaryWithBonus()}`);
+console.log(`Total salary for Human Resource: $${hr.getDepartmentSalary()}`);
+console.log(`Total salary including bonuses for Human Resource: $${hr.calculateTotalSalaryWithBonus()}`);
+
+// Sample data used.
